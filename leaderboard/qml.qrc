@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>fonts/typodermic.ttf</file>
+        <file>fonts/titillium.ttf</file>
+        <file>img/bookmark.png</file>
+        <file>img/3.png</file>
+        <file>img/1.png</file>
+        <file>img/2.png</file>
+        <file>fonts/titillium-bold.ttf</file>
+        <file>img/bookshelf.png</file>
+    </qresource>
+</RCC>
