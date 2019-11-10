@@ -42,9 +42,9 @@ Backend::Backend(QObject *parent) : QObject(parent)
     });
 
     _httpServer->route(
-                "/user/register/<arg>",
-                QHttpServerRequest::Method::Post,
-                [](const QString &username)
+        "/user/register/<arg>",
+        QHttpServerRequest::Method::Post,
+        [](const QString &username)
     {
         int userID = 0;
         bool isNew = true;
@@ -89,9 +89,9 @@ Backend::Backend(QObject *parent) : QObject(parent)
     });
 
     _httpServer->route(
-                "/user/saveScore/<arg>/<arg>",
-                QHttpServerRequest::Method::Post,
-                [](int userID, int score)
+        "/user/saveScore/<arg>/<arg>",
+        QHttpServerRequest::Method::Post,
+        [](int userID, int score)
     {
         //qDebug() << userID << score;
 
@@ -112,9 +112,9 @@ Backend::Backend(QObject *parent) : QObject(parent)
     });
 
     _httpServer->route(
-                "/top",
-                QHttpServerRequest::Method::Get,
-                []()
+        "/top",
+        QHttpServerRequest::Method::Get,
+        []()
     {
         QString userName = "unknown";
         int score = 0;
@@ -139,9 +139,9 @@ Backend::Backend(QObject *parent) : QObject(parent)
     });
 
     _httpServer->route(
-                "/rank/<arg>",
-                QHttpServerRequest::Method::Get,
-                [](int score)
+        "/rank/<arg>",
+        QHttpServerRequest::Method::Get,
+        [](int score)
     {
         int rank = 0;
 
@@ -163,8 +163,8 @@ Backend::Backend(QObject *parent) : QObject(parent)
     if (_httpServer->listen(QHostAddress::Any, _port) == -1)
     {
         qWarning() << QString(
-                        "Could not start the server, perhaps the port %1 is taken by some other service")
-                        .arg(_port);
+            "Could not start the server, perhaps the port %1 is taken by some other service")
+            .arg(_port);
     }
     else
     {
